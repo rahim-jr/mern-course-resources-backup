@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Introduction — Class</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="deck">
+      <header class="deck-header">
+        <h1>CSS Basics — Shirsho</h1>
+        <div class="controls">
+          <button id="prev">◀ Prev</button>
+          <button id="next">Next ▶</button>
+        </div>
+      </header>
+
+      <main class="slides" id="slides">
+        <section class="slide" data-title="CSS Introduction">
+          <h2>What is CSS?</h2>
+          <p>CSS (Cascading Style Sheets) is used to style HTML content — layout, colors, spacing, and more.</p>
+          <ul>
+            <li>Separates presentation from structure</li>
+            <li>Makes pages responsive and attractive</li>
+            <li>Rules: selector { property: value; }</li>
+          </ul>
+        </section>
+
+        <section class="slide" data-title="How to add CSS">
+          <h2>How to Add CSS</h2>
+          <ol>
+            <li>Inline: &lt;h1 style="color: red"&gt;Hello&lt;/h1&gt;</li>
+            <li>Internal: &lt;style&gt; ... &lt;/style&gt; in &lt;head&gt;</li>
+            <li>External: &lt;link rel="stylesheet" href="styles.css"&gt; (recommended)</li>
+          </ol>
+          <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+        </section>
+
+        <section class="slide" data-title="Basic Syntax">
+          <h2>Basic Syntax</h2>
+          <p>CSS rule example:</p>
+          <pre><code>p { color: #333; margin: 0 0 1rem; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Selector">
+          <h2>Selectors</h2>
+          <p>Common selectors:</p>
+          <ul>
+            <li>Element: <code>div</code></li>
+            <li>Class: <code>.card</code></li>
+            <li>ID: <code>#main</code></li>
+            <li>Descendant: <code>nav a</code></li>
+          </ul>
+        </section>
+
+        <section class="slide" data-title="Background properties">
+          <h2>Background Properties</h2>
+          <p>Examples: <code>background-color</code>, <code>background-image</code>, <code>background-size</code>, <code>background-position</code></p>
+          <div class="demo demo-bg">Demo: gradient + image fallback</div>
+          <pre><code>.demo-bg { background: linear-gradient(135deg,#6b73ff,#000dff); color: white; padding: 1rem; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Border properties">
+          <h2>Border Properties</h2>
+          <p>Use <code>border-width</code>, <code>border-style</code>, <code>border-color</code>, or shorthand <code>border</code>.</p>
+          <div class="demo demo-border">Border example</div>
+          <pre><code>.demo-border { border: 3px dashed #cc6600; padding: 1rem; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Border Radius">
+          <h2>Border-radius</h2>
+          <p>Round corners with <code>border-radius</code></p>
+          <div class="demo demo-radius">Rounded box</div>
+          <pre><code>.demo-radius { border-radius: 12px; padding: 1rem; background:#f6f6f6; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Display Property">
+          <h2>Display Property</h2>
+          <p>Common values: <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>flex</code>, <code>grid</code>, <code>none</code>.</p>
+          <div class="demo demo-display">
+            <span class="box inline">inline</span>
+            <span class="box inline-block">inline-block</span>
+            <div class="box block">block</div>
+          </div>
+        </section>
+
+        <section class="slide" data-title="Cursor Property">
+          <h2>Cursor Property</h2>
+          <p>Change pointer when hovering: <code>cursor: pointer</code>, <code>not-allowed</code>, <code>move</code>, etc.</p>
+          <button class="demo demo-cursor">Hover me</button>
+          <pre><code>.demo-cursor { cursor: pointer; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Float Property">
+          <h2>Float Property</h2>
+          <p>Float moves elements left/right and text flows around them. Use with clearfix or prefer <code>flex</code>/<code>grid</code> today.</p>
+          <div class="demo demo-float">
+            <img src="https://picsum.photos/200" alt="placeholder">
+            <p>Example text flows around the floated image. Clearfix after the container to avoid collapsing.</p>
+          </div>
+          <pre><code>.demo-float img { float: left; margin-right: 1rem; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Recap & Next Steps">
+          <h2>Recap</h2>
+          <ul>
+            <li>What CSS does and how to add it</li>
+            <li>Basic syntax and selectors</li>
+            <li>Backgrounds, borders, radius, display, cursor, float</li>
+          </ul>
+          <p>Try: style a small card using the properties covered.</p>
+        </section>
+
+      </main>
+
+      <footer class="deck-footer">
+        <div id="progress">1 / 10</div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

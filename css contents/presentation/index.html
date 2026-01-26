@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CSS — Shirsho</title>
+  <!-- Google Fonts: Inter and Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="deck">
+      <header class="deck-header">
+        <h1>CSS — Shirsho</h1>
+        <div class="controls">
+          <button id="prev">◀ Prev</button>
+          <button id="next">Next ▶</button>
+        </div>
+      </header>
+
+      <main class="slides" id="slides">
+        <section class="slide" data-title="Fonts">
+          <h2>CSS Fonts</h2>
+          <p>Control font family, weight, style, and fallbacks. Example using Google Fonts:</p>
+          <pre><code>&lt;link href="https://fonts.googleapis.com/..." rel="stylesheet"&gt;
+body { font-family: 'Inter', 'Roboto', system-ui, Arial, sans-serif; font-weight: 400; }</code></pre>
+          <p>Tip: put the Google Fonts <code>&lt;link&gt;</code> in the document <code>&lt;head&gt;</code>.</p>
+        </section>
+
+        <section class="slide" data-title="Important">
+          <h2>!important</h2>
+          <p>Forces higher priority: use sparingly — it makes CSS harder to maintain.</p>
+          <pre><code>.btn { color: red !important; }</code></pre>
+
+          <h3>Simple priority (highest → lowest)</h3>
+          <ol>
+            <li>Inline style with <code>!important</code> (e.g. <code>&lt;div style="..."&gt;</code>)</li>
+            <li>Author styles with <code>!important</code> (your external or internal CSS)</li>
+            <li>Inline style (no <code>!important</code>)</li>
+            <li>ID selectors (e.g. <code>#header</code>)</li>
+            <li>Class, attribute, and pseudo-class selectors (e.g. <code>.btn</code>)</li>
+            <li>Element/tag selectors (e.g. <code>p</code>, <code>h1</code>)</li>
+            <li>Browser/user-agent default styles (lowest priority)</li>
+          </ol>
+
+          <p>If two rules have the same specificity, the one that appears later in your CSS (source order) wins.</p>
+          <p>Tip: prefer increasing selector specificity or reorganizing styles instead of using <code>!important</code>.</p>
+        </section>
+
+        <section class="slide" data-title="Line Height">
+          <h2>Line-height</h2>
+          <p>Controls spacing between lines. Use unitless values for scalability.</p>
+          <pre><code>p { line-height: 1.6; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Margin">
+          <h2>Margin</h2>
+          <p>External spacing between elements. Can be shorthand: margin: top right bottom left;</p>
+          <pre><code>.card { margin: 1px 0; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Padding">
+          <h2>Padding</h2>
+          <p>Inner spacing inside elements. Use to control touch targets and visual spacing.</p>
+          <pre><code>.card { padding: 1px; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Filter">
+          <h2>Filter</h2>
+          <p>Apply graphical effects: blur, brightness, contrast, grayscale.</p>
+          <div class="demo demo-filter">
+            <img src="../picture.jpg" style="width: 200px;" alt="filter-demo">
+          </div>
+          <pre><code>img { filter: grayscale(50%) blur(1px); }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Overflow">
+          <h2>Overflow</h2>
+          <p>Control content that exceeds its box: <code>visible</code>, <code>hidden</code>, <code>scroll</code>, <code>auto</code>.</p>
+          <div class="demo demo-overflow">
+            <div class="box">A lot of text repeated. A lot of text repeated. A lot of text repeated. A lot of text repeated.</div>
+          </div>
+          <pre><code>.box { max-height: 100px; overflow: auto; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Position">
+          <h2>Position</h2>
+          <p>Values: static, relative, absolute, fixed, sticky.</p>
+          <pre><code>.badge { position: absolute; top: 8px; right: 8px; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Word Wrap">
+          <h2>Word-wrap / overflow-wrap</h2>
+          <p>Keep long words from overflowing: <code>overflow-wrap: break-word;</code></p>
+          <pre><code>.content { overflow-wrap: break-word; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Justify Content">
+          <h2>Justify-content</h2>
+          <p>Used with flexbox to align items along the main axis: <code>flex-start</code>, <code>center</code>, <code>space-between</code>, etc.</p>
+          <div class="demo demo-justify">
+            <div class="row"><div class="pill">One</div><div class="pill">Two</div><div class="pill">Three</div></div>
+          </div>
+          <pre><code>.row { display:flex; justify-content: space-between; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Text Decoration">
+          <h2>Text Decoration</h2>
+          <p>Underlines, overlines, line-through, and their styles/colors.</p>
+          <pre><code>a { text-decoration: underline; text-decoration-color: #ff6b6b; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Word & Letter Spacing">
+          <h2>Word and Letter Spacing</h2>
+          <p>Control spacing between letters and words.</p>
+          <pre><code>h1 { letter-spacing: 0.05em; word-spacing: 0.2em; }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Variables">
+          <h2>CSS Variables (Custom Properties)</h2>
+          <p>Define reusable values with <code>--name</code> and use <code>var(--name)</code>.</p>
+          <pre><code>:root { --brand: #6b73ff; } .btn { background: var(--brand); }</code></pre>
+        </section>
+
+        <section class="slide" data-title="Recap">
+          <h2>Recap</h2>
+          <ul>
+            <li>Typography: fonts, line-height, spacing</li>
+            <li>Layout helpers: margin, padding, overflow, position</li>
+            <li>Visual: filter, text-decoration, variables</li>
+          </ul>
+        </section>
+
+      </main>
+
+      <footer class="deck-footer">
+        <div id="progress">1 / 14</div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

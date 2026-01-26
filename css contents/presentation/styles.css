@@ -1,0 +1,21 @@
+:root{ --accent:#6b73ff; --muted:#9aa4c0 }
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#071029,#0b1220);color:#e6eef8}
+.deck{max-width:1000px;margin:2rem auto;background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden}
+.deck-header{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.25rem}
+.deck-header h1{font-size:1.1rem;margin:0}
+.controls button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:6px 10px;border-radius:6px;cursor:pointer}
+.slides{position:relative;min-height:420px;padding:2rem}
+.slide{display:none}
+.slide.active{display:block}
+.slide h2{margin-top:0;color:var(--accent)}
+pre{background:rgba(255,255,255,0.03);padding:10px;border-radius:6px;overflow:auto}
+.demo img{max-width:100%;border-radius:8px}
+.demo-filter img{filter:grayscale(40%);border-radius:8px}
+.demo-overflow .box{max-height:100px;overflow:auto;padding:0.5rem;background:rgba(255,255,255,0.02);border-radius:8px}
+.demo-justify .row{display:flex;justify-content:space-between;gap:10px}
+.pill{background:rgba(255,255,255,0.03);padding:8px 12px;border-radius:999px}
+.deck-footer{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 1.25rem;color:var(--muted)}
+#progress{font-weight:600}
+
+@media (max-width:640px){.deck{margin:1rem}.slides{padding:1rem}}
